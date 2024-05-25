@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.contenedor {
+	
+	display: flex;
+	width: 300px;
+	height: 40px;
+	color: #ffffff;
+	font-size: 40px;
+	line-height: 40px;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 275px;
+	left: 110px;
+	margin: auto;
+	overflow: hidden;
+	
+}
+
+ul {
+	list-style: none;
+	padding-left: 10px;
+	animation: cambiar 12s infinite;
+}
+
+ul {
+	margin: 0;
+}
+
+@keyframes cambiar {
+	
+	0%{ margin-top: 0;}
+	20%{ margin-top: 0;}
+	
+	25% {margin-top: -40px;}
+	50% {margin-top: -40px;}
+	
+	55% {margin-top: -80px;}
+	80% {margin-top: -80px;}
+	
+	85% {margin-top: -40px;}
+	95% {margin-top: -40px;}
+	
+	100% {margin-top: 0;}
+}
+
+.login svg{
+    margin-left: 35px;
+}
+.form {
+  position: relative;
+  z-index: 10;
+  background: #dddddd;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  border-radius: 5px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f3f2f2;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #3d3c8b;
+  width: 60%;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #2e31e4;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #585858;
+  font-size: 12px;
+}
+.form .message a {
+  color: #1744da;
+  text-decoration: none;
+}
+
+span{
+  color: red;
+  margin-right: 85px;
+  position: relative;
+  top: -10px
+}

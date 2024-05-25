@@ -1,0 +1,35 @@
+<div class="login-page">
+    <h1 class="login">
+        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="#ffffff" class="bi bi-person-circle" viewBox="0 0 20 12">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+          </svg>
+        <div class="contenedor">
+            <ul>
+                <li>Inicia</li>
+                <li>Inicia</li>
+                <li>Inicia</li>
+                <li>Inicia</li>
+            </ul>
+            <ul>
+                <li>Sesión</li>
+                <li>Sesión</li>
+                <li>Sesión</li>
+                <li>Sesión</li>
+            </ul>
+        </div>
+    </h1>
+    <div class="form">
+        <form (ngSubmit)="loguear()" class="login-form" [formGroup]="formulario">
+            <input type="text" [(ngModel)]="email" name="email" placeholder="username" formControlName="validarE" />
+            <span class="bar"></span>
+            <span class="error" [hidden]="validarE.valid || validarE.pristine">Este campo es requerido</span>
+            <input type="password" [(ngModel)]="password" name="password" placeholder="password"
+                formControlName="validarP" />
+            <span class="bar"></span>
+            <span class="error" [hidden]="validarP.valid || validarP.pristine">Este campo es requerido</span>
+            <button type="submit">login</button>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+        </form>
+    </div>
+</div>

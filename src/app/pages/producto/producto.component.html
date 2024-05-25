@@ -1,0 +1,74 @@
+<div class="header">
+    <h1>Tienda Virtual</h1>
+    <button class="agregar" (click)="openModalAdd()">Agregar Producto</button>
+</div>
+
+<div class="container">
+    @for (item of producto; track $index) {
+    <div class="card">
+        <img [src]="item.images[0]" alt="">
+        <div class="card-content">
+            <h2>{{item.title}}</h2>
+            <p>{{item.description}}</p>
+            <div class="price-category">
+                <span class="price">{{item.price}}</span>
+                <span class="category">{{item.category.name}}</span>
+            </div>
+            <div class="action-buttons">
+                <button class="actualizar" (click)="openModalUpdate(item)">Actualizar</button>
+                <button class="eliminar" (click)="deleteProduct(item)">Eliminar</button>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+<!-- Modal para agregar producto -->
+<div class="modal" [class.show]="OpenModalAdd">
+    <div class="modal-content">
+        <span class="close" (click)="closeModalAdd()">&times;</span>
+        <h2>Agregar Producto</h2>
+        <form (ngSubmit)="addProduct()" #productForm="ngForm">
+            <label for="title">Título:</label>
+            <input type="text" id="title" [(ngModel)]="Newtitle" name="Newtitle" required>
+
+            <label for="description">Descripción:</label>
+            <textarea id="description" [(ngModel)]="Newdescription" name="Newdescription" required></textarea>
+
+            <label for="price">Precio:</label>
+            <input type="number" id="price" [(ngModel)]="Newprice" name="Newprice" required>
+
+            <label for="category">Categoría:</label>
+            <select id="category" [(ngModel)]="Newcategory" name="Newcategory">
+                @for (category of categoria; track $index) {
+                <option value="{{category.id}}">{{category.name}}</option>
+                }
+            </select>
+
+            <label for="image">Imagen URL:</label>
+            <input type="url" id="image" [(ngModel)]="Newimage" name="Newimage">
+
+            <button type="submit">Agregar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal para actualizar producto -->
+<div class="modal" [class.show]="OpenModalUpdate">
+    <div class="modal-content">
+        <span class="close" (click)="closeModalUpdate()">&times;</span>
+        <h2>Actualizar Producto</h2>
+        <form (ngSubmit)="updateProduct()" #productForm="ngForm">
+            <label for="title">Título:</label>
+            <input type="text" id="title" [(ngModel)]="Updatetitle" name="Updatetitle" required>
+
+            <label for="description">Descripción:</label>
+            <textarea id="description" [(ngModel)]="Updatedescription" name="Updatedescription" required></textarea>
+
+            <label for="price">Precio:</label>
+            <input type="number" id="price" [(ngModel)]="Updateprice" name="Updateprice" required>
+
+            <button type="submit">Actualizar</button>
+        </form>
+    </div>
+</div>

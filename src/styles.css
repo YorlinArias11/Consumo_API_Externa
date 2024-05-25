@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.color {
+    background: #5e7cbb;
+    /* fallback for old browsers*/
+    background: rgb(167, 178, 202);
+    background: linear-gradient(90deg, rgb(145, 165, 226) 0%, rgb(193, 205, 230) 50%);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
